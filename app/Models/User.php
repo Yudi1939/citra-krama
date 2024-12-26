@@ -45,4 +45,24 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function biodata()
+    {
+        return $this->hasOne(Biodata::class, 'id_user', 'id');
+    }
+
+    public function keluarga()
+    {
+        return $this->hasOne(Keluarga::class, 'id_user', 'id');
+    }
+
+    public function ekonomi()
+    {
+        return $this->hasOne(Ekonomi::class, 'id_user', 'id');
+    }
+
+    public function rumah()
+    {
+        return $this->hasOne(Rumah::class, 'id_user', 'id');
+    }
 }
